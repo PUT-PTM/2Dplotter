@@ -1,6 +1,7 @@
 # STM32 files
 .settings
 CMSIS
+Debug
 startup
 StdPeriph_Driver
 Utilities
