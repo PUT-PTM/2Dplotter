@@ -1,14 +1,29 @@
 # 2D Plotter
 
-### Overview
-2D plotter machine which can efficiently print letters and words using a pen.
+### Overview:
+2D plotter machine which can efficiently print letters and words using a pen. 
+We use FT232 to send chars to our STM32. Plotter is build with floor panels and two
+frames from CD-ROM drivers.
 
 ### Tools:
 * Microcontroller STM32F407VG DISCOVERY
+* C / C++
 
+### How to run:
+* 1. Compile program in System Workbench for STM32.
+* 2. Open Hercules 3.2.8.
+* 3. Start connection using proper COM port.
+* 4. Type amount of letters you want to write and text.
+* 5. Send those things to STM.
 
 ### How to compile:
-* System Workbench for STM32
+* System Workbench for STM32.
+
+### Attributions:
+* Some parts of our code are based on Arduino Stepper Motor original library.
+
+### License:
+* GNU LESSER GENERAL PUBLIC LICENSE.
 
 ### Credits:
 * **Jakub Hamerliński** - [jakubhamer](https://github.com/jakubhamer)
