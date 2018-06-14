@@ -10,11 +10,11 @@ frames from CD-ROM drivers.
 * C / C++
 
 ### How to run:
-* 1. Compile program in System Workbench for STM32.
-* 2. Open Hercules 3.2.8.
-* 3. Start connection using proper COM port.
-* 4. Type amount of letters you want to write and text.
-* 5. Send those things to STM.
+1. Compile program in System Workbench for STM32.
+2. Open Hercules 3.2.8.
+3. Start connection using proper COM port.
+4. Type amount of letters you want to write and text.
+5. Send those things to STM.
 
 ### How to compile:
 * System Workbench for STM32.
