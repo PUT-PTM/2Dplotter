@@ -3,11 +3,18 @@
 
 #include "stddef.h"
 
+// 0.5 cm ~ 36 steps
 int line = 36;
-
+int written_letters = 0;
+/**
+ * draw a diagonal of square x*y
+ * @param direction [0..3] is a direction of line, where:
+ * 0 - NE
+ * 1 - SE
+ * 2 - SW
+ * 3 - NW
+ */
 void diagonal(int x, int y, int direction) {
-
-	// 0 NE, 1 SE, 2 SW, 3 NW
 	int temp_x = 0, temp_y = 0, scale, x_larger;
 	if (x >= y) {
 		scale = x / y;
@@ -83,7 +90,6 @@ void diagonal(int x, int y, int direction) {
 }
 
 void draw_text(char* text) {
-	int written_letters;
 	for (int i = 0; i < strlen(text); i++) {
 		if ((((written_letters % 7 == 0) && (line == 36))
 				|| ((written_letters % 14 == 0) && (line == 18)))
@@ -213,7 +219,6 @@ void draw_text(char* text) {
 		case '_':
 			draw_floor();
 			break;
-
 		case ' ':
 			horizontal(line / 2);
 			break;
@@ -294,7 +299,6 @@ void draw_e() {
 	horizontal(line / 2);
 
 	pen_up();
-	Delay(200);
 	vertical(line / 2);
 	pen_down();
 	horizontal(-line / 2);
@@ -338,18 +342,14 @@ void draw_g() {
 	horizontal(0.75 * line);
 }
 void draw_h() {
-	Delay(100);
 	pen_up();
 	vertical(-line);
 	pen_down();
 	vertical(line);
 	pen_up();
-	Delay(100);
 	horizontal(line / 2);
 	pen_down();
 	vertical(-line);
-	Delay(100);
-
 	pen_up();
 	vertical(line / 2);
 	pen_down();
@@ -766,12 +766,11 @@ void draw_floor() {
 	horizontal(line / 2);
 }
 void draw_nl() {
-	Delay(300);
 	vertical(-1.5 * line);
 	if (line == 18)
 		horizontal(-14 * line);
 	else
 		horizontal(-7 * line);
-	Delay(800);
+	Delay(500);
 }
 #endif /* LETTERS_H_ */

@@ -1,3 +1,10 @@
+/*
+ * delay.h
+ *
+ *  Created on: 16.04.2018
+ *      Author: ngier
+ */
+
 #ifndef DELAY_H_
 #define DELAY_H_
 #include "stm32f4xx.h"
@@ -10,16 +17,18 @@ void SysTick_Handler(void) {
 	msTicks++;
 }
 
-void setSysTick(void){
+void setSysTick(void) {
 	if (SysTick_Config(SystemCoreClock / 1000)) {
 		// Capture error
-		while (1){};
+		while (1) {
+		};
 	}
 }
 
-static void Delay(__IO uint32_t dlyTicks){
-  uint32_t curTicks = msTicks;
-  while ((msTicks - curTicks) < dlyTicks);
+static void Delay(__IO uint32_t dlyTicks) {
+	uint32_t curTicks = msTicks;
+	while ((msTicks - curTicks) < dlyTicks)
+		;
 }
 
 uint32_t getTime() {
