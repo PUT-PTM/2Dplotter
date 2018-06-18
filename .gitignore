@@ -2,6 +2,7 @@
 *.o
 *.xml
 *.ld
+*.cfg
 
 Debug/
 /Release/
